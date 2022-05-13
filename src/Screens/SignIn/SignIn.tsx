@@ -11,6 +11,9 @@ import { Text,
 
 
 const SignIn = ({ navigation }) => {
+  const navigate = () => {
+    navigation.navigate('register');
+  }
 
   return (
     <KeyboardAvoidingView>
@@ -46,9 +49,11 @@ const SignIn = ({ navigation }) => {
             <Text style={styles.pressableText}>Log In</Text>
           </Pressable>
 
+          <Pressable onPress={navigate}>
           <Text style={{fontSize: 25, marginTop: 20, color: 'white',  fontWeight:'bold'}}>
             Register
           </Text>
+          </Pressable>
 
         </View>
 
