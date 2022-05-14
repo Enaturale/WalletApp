@@ -8,14 +8,15 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize: 20,
+        fontWeight:'bold',
     },
     description:{
-        fontSize: 20,
+        fontSize: 18,
     },
 
     item:{
         width: '100%',
-        height: screenWidth - 20
+        height: screenWidth - 40
     },
     imageContainer:{
         flex: 1,
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         resizeMode:'contain',
     },
     dotContainer:{
-        backgroundColor:'rgb(230, 0, 0)',
+        backgroundColor:'#D9D9D9',
     },
     dotStyle:{
         width: 10,
