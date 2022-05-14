@@ -15,6 +15,10 @@ const SignIn = ({ navigation }) => {
     navigation.navigate('register');
   }
 
+  const gotoDashboard =() =>{
+    navigation.navigate('Dashboard');
+  }
+
   return (
     <KeyboardAvoidingView>
       <View style={{marginTop: 20, alignContent:'center', justifyContent:'center'}}>
@@ -45,7 +49,7 @@ const SignIn = ({ navigation }) => {
             Forgot Password?
           </Text>        
 
-          <Pressable style={styles.pressable}>
+          <Pressable style={styles.pressable} onPress={gotoDashboard}>
             <Text style={styles.pressableText}>Log In</Text>
           </Pressable>
 
