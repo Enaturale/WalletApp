@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 20,
     },
+    description:{
+        fontSize: 20,
+    },
+
     item:{
         width: '100%',
         height: screenWidth - 20

@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import CustomSlider from '../../Components/CustomSlider';
+import data from './data';
 
 const Dashboard = () => {
     return(
         <View>
-            <Text>Dashboard</Text>
+            <CustomSlider  data={data}/>
         </View>
     )
 }
