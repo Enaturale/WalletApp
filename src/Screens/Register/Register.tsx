@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     // alignItems:'center',
     marginTop: 0,
     height: 800,
-    backgroundColor: '#303F9F',
+    backgroundColor: '#0693E3',
     borderRadius: 23,
   },
   input: {
@@ -104,11 +104,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    color: 'white',
+    color: 'black',
     width: '93%',
   },
   pressableText:{
-    color: '#303F9F',
+    color: '#0693E3',
     fontSize: 30,
     alignContent:'center',
     justifyContent:'center',
