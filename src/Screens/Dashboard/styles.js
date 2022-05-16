@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor:'black',
     },
     inactiveDotStyle:{
-        backgroundColor:'rgb(225, 230, 230',
+        backgroundColor:'rgb(225, 230, 230)',
     },
 });
 

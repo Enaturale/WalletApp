@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useEffect } from 'react';
 import { Text, 
       View, 
       TouchableOpacity, 
@@ -7,10 +8,12 @@ import { Text,
       StyleSheet, 
       Pressable,
       Image } from 'react-native'
+import { auth } from '../../../firebse';
 
 
 
 const SignIn = ({ navigation }) => {
+  
   const navigate = () => {
     navigation.navigate('register');
   }
@@ -18,6 +21,43 @@ const SignIn = ({ navigation }) => {
   const gotoDashboard =() =>{
     navigation.navigate('Dashboard');
   }
+
+  const [email, setEmail] = useState(' ');
+  const [password, setPassword] = useState(' ');
+  //if the user is logged in
+  useEffect(()=> {
+   const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user){
+        navigation.navigate('Dashboard');
+      }
+
+    })
+    return unsubscribe
+  }, [])
+
+  const handleSignUp = () => {
+    auth
+    .createUserWithEmailAndPassword(email.trim(), password)
+    .then((userCredentials) => {
+      const user = userCredentials.user;
+      alert('User created successfully. You registered with ' + user.email);
+      navigation.navigate('Dashboard')
+    })
+    .catch((error: { message: any; }) => alert(error.message) )
+  }
+
+  const handleSignIn = () => {
+    auth
+    .signInWithEmailAndPassword(email.trim(), password)
+    .then((userCredentials: { user: any; }) => {
+      const user = userCredentials.user;
+     alert('Welcome back ' + user.email);
+      navigation.navigate('Dashboard')
+    })
+    .catch((error: { message: any; }) => alert(error.message) )
+
+  }
+
 
   return (
     <KeyboardAvoidingView>
@@ -33,15 +73,15 @@ const SignIn = ({ navigation }) => {
         <View style={{justifyContent: 'center', alignItems:'center', marginTop: 50,}}>
           <TextInput
             placeholder='  Email'
-            //  value={}
-            //  onChangeText={text =>}
+            value={email}
+            onChangeText={text => setEmail(text)}
             style={styles.input}
           />
           <TextInput
             placeholder='   Password'
             secureTextEntry
-            //  value={}
-            //  onChangeText={text =>}
+            value={password}
+            onChangeText={text => setPassword(text)}
             style={styles.input}
           />  
 
@@ -49,12 +89,12 @@ const SignIn = ({ navigation }) => {
             Forgot Password?
           </Text>        
 
-          <Pressable style={styles.pressable} onPress={gotoDashboard}>
+          <Pressable style={styles.pressable} onPress={handleSignIn}>
             <Text style={styles.pressableText}>Log In</Text>
           </Pressable>
 
-          <Pressable onPress={navigate}>
-          <Text style={{fontSize: 25, marginTop: 20, color: 'white',  fontWeight:'bold'}}>
+          <Pressable onPress={handleSignUp} style={styles.pressableOutline}>
+          <Text style={{fontSize: 25, marginTop: 9, color: 'white',  fontWeight:'bold'}}>
             Register
           </Text>
           </Pressable>
@@ -93,7 +133,7 @@ const styles = StyleSheet.create({
     width: '95%',
     marginBottom: 25,
     borderColor: '#3F51B5',
-    color: '#303F9F',
+    color: '#0693E3',
     fontWeight: 'bold',
     borderRadius: 10,
     backgroundColor: 'white'
@@ -110,6 +150,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     color: 'black',
     width: '93%',
+  },
+  pressableOutline:{
+    borderColor: 'white',
+    height: 50,
+    borderWidth: 1,
+    width: '93%',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 25,
   },
   pressableText:{
     color: '#0693E3',
