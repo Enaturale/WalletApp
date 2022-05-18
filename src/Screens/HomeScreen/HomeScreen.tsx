@@ -17,20 +17,23 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+
+     
+
       <View style={{marginTop: 20, alignContent:'center', justifyContent:'center'}}>
       <Image
           source={require('../../../assets/walletlogo.png')}
           style={styles.image}
         />
-      </View>
+      </View>     
 
-      <View style={{  alignContent: 'center', justifyContent: 'center', }}>
-        <Text style={[styles.text, { marginBottom: 1, alignSelf: 'center', }]}>
+       <View style={{  alignContent: 'center', justifyContent: 'center', }}>
+        {/* <Text style={[styles.text, { marginBottom: 1, alignSelf: 'center', }]}>
           Seamless Potentials at your 
         </Text>
-        <Text style={[styles.text, { marginBottom: 10, alignSelf: 'center', }]}>Fingertips!</Text>
-        <Text style={styles.text}>Ready to Begin?</Text>
-      </View>
+        <Text style={[styles.text, { marginBottom: 10, alignSelf: 'center', }]}>Fingertips!</Text> */}
+        <Text style={styles.text}>Go Seamless!</Text>
+      </View> 
 
 
       <Pressable style={styles.pressable} onPress={navigate}>
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
   pressable: {
     borderWidth: 1,
     borderColor: '#e3e3e3',
-    backgroundColor: '#3F51B5',
+    backgroundColor: '#0693E3',
     marginHorizontal: 20,
     height: 50,
     justifyContent: 'center',

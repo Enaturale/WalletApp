@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 
     item:{
         width: '100%',
-        height: screenWidth - 40
+        height: screenWidth - 80
     },
     imageContainer:{
         flex: 1,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         resizeMode:'contain',
     },
     dotContainer:{
-        backgroundColor:'#D9D9D9',
+       // backgroundColor:'#D9D9D9',
     },
     dotStyle:{
         width: 10,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor:'black',
     },
     inactiveDotStyle:{
-        backgroundColor:'rgb(225, 230, 230)',
+        backgroundColor:'#969696',
     },
 });
 
