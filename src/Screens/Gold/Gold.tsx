@@ -5,7 +5,7 @@ const Gold = () => {
     return(
         <View>
             <Text>
-                Investement Page
+                Gold Page
             </Text>
         </View>
     )

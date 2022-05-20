@@ -11,6 +11,7 @@ import Savings from './src/Screens/Savings/Savings';
 import Gold from './src/Screens/Gold/Gold';
 
 import 'react-native-gesture-handler';
+import Navigation from './Navigator';
 
 const Stack = createStackNavigator();
 
@@ -21,18 +22,14 @@ const App = () => {
    <NavigationContainer>
      <Stack.Navigator>
         <Stack.Screen name="HomeScreen" component ={HomeScreen} options={{headerShown:false}}/>       
-       <Stack.Screen name="signIn" component ={SignIn} options={{headerShown:false}}/>
-       <Stack.Screen name="register" component ={Register} options={{headerShown:false}}/>
-       <Stack.Screen name="Dashboard" component ={Dashboard} />
-       {/* <Stack.Screen name="Save in Gold" component ={Gold} />
-       <Stack.Screen name="Investments" component ={Investement} />
-       <Stack.Screen name="Savings" component ={Savings} /> */}
-
+       <Stack.Screen name="signIn" component ={SignIn} options={{headerShown:false}}/>       
+       <Stack.Screen name="Dashboard" component ={Navigation} />      
     </Stack.Navigator>      
+  
   </NavigationContainer>
   )
 }
-
+ 
 const styles = StyleSheet.create({
 
 });

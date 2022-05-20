@@ -5,7 +5,7 @@ const Savings = () => {
     return(
         <View>
             <Text>
-                Investement Page
+              Savings Page
             </Text>
         </View>
     )
