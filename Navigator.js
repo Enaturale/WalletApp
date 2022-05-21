@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import materialIcon from 'react-native-vector-icons/MaterialIcons';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
 
 
@@ -63,8 +63,11 @@ export default function Navigation(props) {
     return (
       
             <Tab.Navigator
-            tabBarOptions={{
-                activeTintColor: '#0097A7'
+            screenOptions={{
+                tabBarActiveTintColor: '#0097A7',
+                tabBarstyle:{
+                    backgroundColor: '#CFD8DC',
+                }
             }}
             >
                 <Tab.Screen 
@@ -73,7 +76,7 @@ export default function Navigation(props) {
                   options={{
                       headerShown:false,
                       tabBarIcon: ({color, size}) => (
-                          <materialIcon name = "home" color={color} size={size} />
+                          <MaterialIcon name = "home" color={color} size={size} />
                       )
                 }}
                   />
@@ -83,7 +86,7 @@ export default function Navigation(props) {
                     options={{
                         headerShown:false,
                         tabBarIcon: ({color, size}) => (
-                            <materialIcon name = "category" color={color} size={size} />
+                            <MaterialIcon name = "category" color={color} size={size} />
                         )
                   }}
                     
@@ -94,7 +97,7 @@ export default function Navigation(props) {
                      options={{
                         headerShown:false,
                         tabBarIcon: ({color, size}) => (
-                            <materialIcon name = "person" color={color} size={size} />
+                            <MaterialIcon name = "person" color={color} size={size} />
                         )
                         
                         }}
