@@ -72,13 +72,13 @@ const SignIn = ({ navigation }) => {
       
         <View style={{justifyContent: 'center', alignItems:'center', marginTop: 50,}}>
           <TextInput
-            placeholder='  Email'
+            placeholder='Email'
             value={email}
             onChangeText={text => setEmail(text)}
             style={styles.input}
           />
           <TextInput
-            placeholder='   Password'
+            placeholder='Password'
             secureTextEntry
             value={password}
             onChangeText={text => setPassword(text)}
