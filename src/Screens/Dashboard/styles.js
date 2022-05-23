@@ -7,16 +7,22 @@ const styles = StyleSheet.create({
         paddingTop: 30,
     },
     title:{
-        fontSize: 20,
+        fontSize: 24,
         fontWeight:'bold',
+        color:'white',       
     },
     description:{
         fontSize: 18,
+        color:'white',
     },
 
     item:{
         width: '100%',
-        height: screenWidth - 80
+        height: screenWidth - 290,
+        backgroundColor: '#0693E3',
+        alignItems: 'center',
+        justifyContent:'center',
+        borderRadius: 20,
     },
     imageContainer:{
         flex: 1,

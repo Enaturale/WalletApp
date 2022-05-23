@@ -25,15 +25,15 @@ const SignIn = ({ navigation }) => {
   const [email, setEmail] = useState(' ');
   const [password, setPassword] = useState(' ');
   //if the user is logged in
-  // useEffect(()=> {
-  //  const unsubscribe = auth.onAuthStateChanged(user => {
-  //     if (user){
-  //       navigation.navigate('Dashboard');
-  //     }
+  useEffect(()=> {
+   const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user){
+        navigation.navigate('Dashboard');
+      }
 
-  //   })
-  //   return unsubscribe
-  // }, [])
+    })
+    return unsubscribe
+  }, [])
 
   const handleSignUp = () => {
     auth

@@ -14,6 +14,9 @@ import Investement from './src/Screens/Investment/Investment';
 import Savings from './src/Screens/Savings/Savings';
 import Gold from './src/Screens/Gold/Gold';
 
+import Categories from "./src/Screens/Categories/Categories";
+import Profile from "./src/Screens/Profile/Profile";
+
 
 
 const Stack = createStackNavigator();
@@ -23,7 +26,16 @@ const Tab = createBottomTabNavigator();
 function DashbaordStackScreen() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}} />
+            <Stack.Screen name="Dashboard" component={Dashboard} options={{
+                title: 'Home',
+                headerStyle:{
+                    backgroundColor: '#0693E3',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }} />
             <Stack.Screen name="Gold Page" component={Gold} options={{headerShown:false}} />
             <Stack.Screen name="Savings Page" component={Savings} options={{headerShown:false}}/>
             <Stack.Screen name="Investment Page" component={Investement}  options={{headerShown:false}} />
@@ -49,15 +61,62 @@ function SavingsStackScreen() {
 
     )
 }
-function InvestmentStackScreen() {
+
+function CategoriesStackScreen() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Investment" component={Investement} options={{headerShown:false}} />
-            <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}} />            
+            <Stack.Screen 
+                name="Categories" 
+                component={Categories} 
+                options={{
+                    title: 'Categories',
+                    headerStyle:{
+                        backgroundColor: '#0693E3',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    }
+                }}
+            />
+            <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}}/>            
         </Stack.Navigator>
 
     )
 }
+
+function ProfileStackScreen() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen 
+                name="Profile" 
+                component={Profile} 
+                options={{
+                    title: 'Profile',
+                    headerStyle:{
+                        backgroundColor: '#0693E3',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    }
+                }}  
+                
+            />
+            <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}}/>            
+        </Stack.Navigator>
+
+    )
+}
+// function InvestmentStackScreen() {
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen name="Investment" component={Investement} options={{headerShown:false}} />
+//             <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}} />            
+//         </Stack.Navigator>
+
+//     )
+// }
 
 export default function Navigation(props) {
     return (
@@ -67,6 +126,10 @@ export default function Navigation(props) {
                 tabBarActiveTintColor: '#0097A7',
                 tabBarstyle:{
                     backgroundColor: '#CFD8DC',
+                },
+                tabBarLabelStyle:{
+                    fontSize: 15,
+                    fontWeight: 'bold',
                 }
             }}
             >
@@ -82,7 +145,7 @@ export default function Navigation(props) {
                   />
                 <Tab.Screen 
                     name="Categories" 
-                    component={GoldStackScreen} 
+                    component={CategoriesStackScreen} 
                     options={{
                         headerShown:false,
                         tabBarIcon: ({color, size}) => (
@@ -93,7 +156,7 @@ export default function Navigation(props) {
                     />
                 <Tab.Screen 
                      name="Profile" 
-                     component={SavingsStackScreen} 
+                     component={ProfileStackScreen} 
                      options={{
                         headerShown:false,
                         tabBarIcon: ({color, size}) => (

@@ -7,17 +7,20 @@ function CarouselItem({ item, index }, parallaxProps) {
     return (
       <Pressable onPress={() => alert('Image description:' + item.description)}>
         <SafeAreaView style={styles.item}>
-          <ParallaxImage
-            source={{ uri: item.image }} /* the source of the image */
+           {/* <ParallaxImage
+            source={{ uri: item.image }} 
             containerStyle={styles.imageContainer}
             style={styles.image}
-            {...parallaxProps} /* pass in the necessary props */ 
-          />
+            {...parallaxProps} 
+          />  */}
           <Text style={styles.title} numberOfLines={2}>
           {item.title}
         </Text>
         <Text style={styles.description} numberOfLines={2}>
           {item.description}
+        </Text>
+        <Text style={styles.description} numberOfLines={2}>
+          {item.amount}
         </Text>
       </SafeAreaView>
     </Pressable>
