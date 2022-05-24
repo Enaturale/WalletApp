@@ -19,6 +19,7 @@ const Stack = createStackNavigator();
 const App = () => {
 
   return(
+    
    <NavigationContainer>
      <Stack.Navigator>
         <Stack.Screen name="HomeScreen" component ={HomeScreen} options={{headerShown:false}}/>       

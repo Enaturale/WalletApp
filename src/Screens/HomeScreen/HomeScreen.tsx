@@ -18,9 +18,9 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
 
-     
+      <View style={{backgroundColor: 'white', height: '80%', marginTop: 180, borderRadius: 20,}}>
 
-      <View style={{marginTop: 20, alignContent:'center', justifyContent:'center'}}>
+      <View style={{marginTop: 50, alignContent:'center', justifyContent:'center', }}>
       <Image
           source={require('../../../assets/walletlogo.png')}
           style={styles.image}
@@ -37,8 +37,15 @@ const HomeScreen = ({ navigation }) => {
 
 
       <Pressable style={styles.pressable} onPress={navigate}>
-        <Text style={{ fontSize: 23, color: 'white', fontWeight: '500' }}>Start</Text>
+        <Text style={{ fontSize: 25, color: 'white', fontWeight: '600' }}>Start</Text>
       </Pressable>
+
+      </View>
+
+
+     
+
+      
     </View>
 
   );
@@ -51,26 +58,29 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     //alignContent: 'center',
     //alignSelf: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#009688',
   },
   text: {
-    fontSize: 23,
+    fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 10,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
+    marginTop: 10,
+    color: '#009688'
   },
   pressable: {
     borderWidth: 1,
     borderColor: '#e3e3e3',
-    backgroundColor: '#0693E3',
+    backgroundColor: '#009688',
     marginHorizontal: 20,
-    height: 50,
+    height: 60,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    color: 'white'
+    color: 'white',
+    marginTop: 25,
   },
   image:{
     height: 200,

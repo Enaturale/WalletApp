@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     // alignItems:'center',
     marginTop: 0,
     height: 800,
-    backgroundColor: '#0693E3',
+    backgroundColor: '#009688',
     borderRadius: 23,
   },
   input: {
@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: '95%',
     marginBottom: 25,
-    borderColor: '#3F51B5',
-    color: '#0693E3',
+    borderColor: '#90A4AE',
+    color: '#009688',
     fontWeight: 'bold',
     borderRadius: 10,
     backgroundColor: 'white'
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   pressableText:{
-    color: '#0693E3',
+    color: '#009688',
     fontSize: 30,
     alignContent:'center',
     justifyContent:'center',

@@ -27,13 +27,15 @@ function DashbaordStackScreen() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Dashboard" component={Dashboard} options={{
-                title: 'Home',
+                title: 'Welcome',
                 headerStyle:{
-                    backgroundColor: '#0693E3',
+                    backgroundColor: '#009688',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
                     fontWeight: 'bold',
+                    fontSize:25,
+                    alignItems:'center'
                 }
             }} />
             <Stack.Screen name="Gold Page" component={Gold} options={{headerShown:false}} />
@@ -71,11 +73,13 @@ function CategoriesStackScreen() {
                 options={{
                     title: 'Categories',
                     headerStyle:{
-                        backgroundColor: '#0693E3',
+                        backgroundColor: '#009688',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
                         fontWeight: 'bold',
+                        fontSize:25,
+                        alignItems:'center'
                     }
                 }}
             />
@@ -94,7 +98,7 @@ function ProfileStackScreen() {
                 options={{
                     title: 'Profile',
                     headerStyle:{
-                        backgroundColor: '#0693E3',
+                        backgroundColor: '#009688',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
@@ -123,9 +127,9 @@ export default function Navigation(props) {
       
             <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: '#0097A7',
+                tabBarActiveTintColor: '#00796B',
                 tabBarstyle:{
-                    backgroundColor: '#CFD8DC',
+                    backgroundColor: '#4DB6AC',
                 },
                 tabBarLabelStyle:{
                     fontSize: 15,
@@ -144,7 +148,7 @@ export default function Navigation(props) {
                 }}
                   />
                 <Tab.Screen 
-                    name="Categories" 
+                    name="Categories Page" 
                     component={CategoriesStackScreen} 
                     options={{
                         headerShown:false,
@@ -155,7 +159,7 @@ export default function Navigation(props) {
                     
                     />
                 <Tab.Screen 
-                     name="Profile" 
+                     name="Profile Page" 
                      component={ProfileStackScreen} 
                      options={{
                         headerShown:false,

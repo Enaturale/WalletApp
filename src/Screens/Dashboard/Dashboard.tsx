@@ -4,6 +4,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import CustomSlider from '../../Components/CustomSlider';
 import data from './data';
 import person from './person';
+import PlusIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const Dashboard = ({ navigation }) => {
@@ -14,54 +15,68 @@ const Dashboard = ({ navigation }) => {
 
 
         <View style={{ backgroundColor: 'white', height: '100%' }}>
+            {/* Title */}
+            <Text style={{ fontSize: 25, color: '#607D8B', marginHorizontal: 30, marginTop: 20, fontWeight: 'bold' }}>
+                My Wallet
+            </Text>
+
             {/* Slider here */}
             <CustomSlider data={data} />
 
-            {/* Update Profile */}
-            <View>
-                <Pressable style={styles.pressable} onPress={gotoProfile}>
-                    <Text style={styles.pressableText} >Update your Profile!</Text>
-                </Pressable>
-            </View>
 
-            {/* Transactions */}
-            <View style={styles.recentContainer} >
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View><Text style={styles.recentText} >Recent Activities</Text></View>
-                    <View><Pressable><Text style={styles.seeallText}>See All</Text></Pressable></View>
-
+            <View style={{ backgroundColor: 'white', height: 800, borderRadius: 25, }}>
+                {/* Update Profile */}
+                <View style={{ marginTop: 10, justifyContent: 'flex-end', alignItems: 'flex-end', marginRight: 30, }}>
+                    <Pressable style={styles.pressable} onPress={gotoProfile}>
+                        <Text style={styles.pressableText}>Update your Profile!</Text>
+                    </Pressable>
                 </View>
 
-                <ScrollView>
-                    <View style={styles.listing}>
-                        {person.map((person) => {
-                            return (
-                                <View style={styles.list}>
-                                    <View>
-                                        <Text style={styles.listText}>{person.name}</Text>
-                                    </View>
-                                    <View>
-                                        <Text style={styles.listText}>{person.amount}</Text>
-                                    </View>
-                                </View>
-                            )
-                        })}
+                {/* Transactions */}
+                <View style={styles.recentContainer} >
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <View><Text style={styles.recentText} >Recent Activities</Text></View>
+                        <View><Pressable><Text style={styles.seeallText}>See All</Text></Pressable></View>
 
                     </View>
-                </ScrollView>
+
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <View style={styles.listing}>
+                            {person.map((person) => {
+                                return (
+                                    <View style={styles.list}>
+                                        <View>
+                                            <Text style={styles.listText}>{person.name}</Text>
+                                        </View>
+                                        <View>
+                                            <Text style={styles.listText}>{person.amount}</Text>
+                                        </View>
+                                    </View>
+                                )
+                            })}
+
+                        </View>
+                    </ScrollView>
 
 
 
-            </View>
-
-            {/* cards */}
-            <View style={styles.cardContainer}>
-                <View>
-                    <Text>My Cards</Text>
-                    <Text>Add New Card</Text>
                 </View>
 
+                {/* cards
+                <View style={styles.cardContainer}>
+                    <View>
+                        <Text style={styles.cardTitle}>My Cards</Text>
+                        <View style={{ flexDirection: 'row' }}>
+                            <PlusIcon name="plus-circle-outline" color='white' />
+                            <Text style={{ fontSize: 25, color: 'white', }}>Add New Card</Text>
+                        </View>
+
+                    </View>
+
+                </View> */}
+
             </View>
+
         </View>
 
 
@@ -79,26 +94,27 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginLeft: 20,
+        color: '#607D8B',
     },
     recentText: {
-        fontSize: 20,
-        color: 'white',
+        fontSize: 23,
+        color: '#607D8B',
         fontWeight: 'bold',
         marginTop: 20,
         marginLeft: 20,
     },
     seeallText: {
         fontSize: 20,
-        color: 'white',
+        color: '#607D8B',
         fontWeight: 'bold',
         marginTop: 20,
         marginRight: 34,
 
     },
     recentContainer: {
-        backgroundColor: '#0693E3',
+        backgroundColor: 'white',
         height: '40%',
-        marginTop: 20,
+        marginTop: 10,
         borderRadius: 20,
         marginHorizontal: 15,
     },
@@ -111,22 +127,32 @@ const styles = StyleSheet.create({
 
     },
     listing: {
+        marginTop: 20,
 
     },
     listText: {
         fontSize: 20,
-        color: 'white',
+        color: 'black',
         paddingRight: 40,
+    
 
     },
     cardContainer: {
-        backgroundColor: '#0693E3',
+        backgroundColor: 'white',
         height: '40%',
         marginTop: 20,
         borderRadius: 20,
         marginHorizontal: 15,
 
     },
+    cardTitle: {
+        fontSize: 20,
+        color: 'white',
+        marginHorizontal: 20,
+        marginTop: 20,
+        marginBottom: 10,
+        fontWeight: 'bold'
+    }
 })
 
 export default Dashboard;
