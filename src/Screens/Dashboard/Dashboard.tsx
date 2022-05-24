@@ -11,7 +11,7 @@ const Dashboard = ({ navigation }) => {
         navigation.navigate('Profile');
     }
     return (
-        
+
 
         <View style={{ backgroundColor: 'white', height: '100%' }}>
             {/* Slider here */}
@@ -28,7 +28,7 @@ const Dashboard = ({ navigation }) => {
             <View style={styles.recentContainer} >
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View><Text style={styles.recentText} >Recent Activities</Text></View>
-                    <View><Text style={styles.seeallText}>See All</Text></View>
+                    <View><Pressable><Text style={styles.seeallText}>See All</Text></Pressable></View>
 
                 </View>
 
@@ -55,7 +55,7 @@ const Dashboard = ({ navigation }) => {
             </View>
 
             {/* cards */}
-            <View style={styles.cardContainer}> 
+            <View style={styles.cardContainer}>
                 <View>
                     <Text>My Cards</Text>
                     <Text>Add New Card</Text>
@@ -63,7 +63,7 @@ const Dashboard = ({ navigation }) => {
 
             </View>
         </View>
-        
+
 
 
 
@@ -119,8 +119,8 @@ const styles = StyleSheet.create({
         paddingRight: 40,
 
     },
-    cardContainer:{
-          backgroundColor: '#0693E3',
+    cardContainer: {
+        backgroundColor: '#0693E3',
         height: '40%',
         marginTop: 20,
         borderRadius: 20,
