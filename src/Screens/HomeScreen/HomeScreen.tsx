@@ -61,14 +61,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#009688',
   },
   text: {
-    fontSize: 25,
+    fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 10,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
     marginTop: 10,
-    color: '#009688'
+    color: '#009688', 
+    fontFamily:'Nunito-Bold',
   },
   pressable: {
     borderWidth: 1,
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     color: 'white',
     marginTop: 25,
+    fontFamily:'Nunito-Regular'
   },
   image:{
     height: 200,

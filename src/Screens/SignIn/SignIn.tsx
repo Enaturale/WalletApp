@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 25,
+    fontFamily: 'Nunito-Regular'
   },
   pressableText:{
     color: '#009688',
@@ -167,6 +168,7 @@ const styles = StyleSheet.create({
     alignContent:'center',
     justifyContent:'center',
     fontWeight:'bold',
+    fontFamily: 'Nunito-Bold'
   },
   pressableContainer:{
     borderRadius: 10

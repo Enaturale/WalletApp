@@ -68,7 +68,7 @@ function CategoriesStackScreen() {
     return (
         <Stack.Navigator>
             <Stack.Screen 
-                name="Categories" 
+                name="My Wallet" 
                 component={Categories} 
                 options={{
                     title: 'Categories',
@@ -93,7 +93,7 @@ function ProfileStackScreen() {
     return (
         <Stack.Navigator>
             <Stack.Screen 
-                name="Profile" 
+                name="Profile Page" 
                 component={Profile} 
                 options={{
                     title: 'Profile',
@@ -148,7 +148,7 @@ export default function Navigation(props) {
                 }}
                   />
                 <Tab.Screen 
-                    name="Categories Page" 
+                    name="Categories" 
                     component={CategoriesStackScreen} 
                     options={{
                         headerShown:false,
@@ -159,7 +159,7 @@ export default function Navigation(props) {
                     
                     />
                 <Tab.Screen 
-                     name="Profile Page" 
+                     name="Profile" 
                      component={ProfileStackScreen} 
                      options={{
                         headerShown:false,
