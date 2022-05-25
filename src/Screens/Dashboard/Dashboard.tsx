@@ -16,7 +16,7 @@ const Dashboard = ({ navigation }) => {
 
         <View style={{ backgroundColor: 'white', height: '100%' }}>
             {/* Title */}
-            <Text style={{ fontSize: 25, color: '#B80000',marginHorizontal: 30, marginTop: 20, fontWeight: 'bold' }}>
+            <Text style={{ fontSize: 25, color: '#009688',marginHorizontal: 30, marginTop: 20, fontWeight: 'bold' }}>
                 My Wallet
             </Text>
 
@@ -95,16 +95,18 @@ const Dashboard = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     pressable: {
+       
     },
     pressableText: {
         fontSize: 20,
         fontWeight: 'bold',
         marginLeft: 20,
         color: '#B80000',
+        fontFamily:'Nunito-Italic',
     },
     recentText: {
         fontSize: 23,
-        color: '#B80000',
+        color: '#009688',
         fontWeight: 'bold',
         marginTop: 20,
         marginLeft: 20,

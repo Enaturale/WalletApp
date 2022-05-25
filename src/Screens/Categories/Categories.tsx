@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Pressable, TextInput } from 'react-native'
+import { View, Text, ScrollView, Pressable, TextInput, Alert } from 'react-native'
 import Styles from './Styles';
 import PlusIcon from 'react-native-vector-icons/FontAwesome';
 import { Modal } from '../../Components/Modal';
@@ -11,6 +11,46 @@ const Categories = ({ navigation }) => {
     const [showModal, setShowModal] = useState(false);
 
     const handleModal = () => setShowModal(() => !showModal);
+
+    //WHen the save button of the modal is clicked on
+    const handleSave = () => {
+        return (
+            Alert.alert(
+                "Add Card", "Card Saved Successfully!",
+                [
+                    {
+                        text: "Okay",
+                        onPress: () => handleModal()
+                    }
+                ]
+            )
+
+        )
+    }
+
+    //WHen the cancel button of the modal is clicked on
+    const handleCancel = () => {
+        return (
+            Alert.alert(
+                "Add Card", "Are you sure?",
+                [
+                    {
+                        text: "Yes",
+                        onPress: () => handleModal(),
+
+                    },
+                    {
+                        text: "Cancel",
+                        onPress: () => setShowModal(showModal),
+                        style: 'destructive',
+
+                    }
+
+                ]
+            )
+
+        )
+    }
 
     const addCardSavings = () => {
         return (
@@ -41,8 +81,8 @@ const Categories = ({ navigation }) => {
                             </View>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Pressable onPress={handleModal} style={Styles.pressable}><Text style={Styles.pressableText}>Save</Text></Pressable>
-                            <Pressable onPress={handleModal} style={Styles.pressableOutline}><Text style={Styles.pressableTextOutline}>Cancel</Text></Pressable>
+                            <Pressable onPress={handleSave} style={Styles.pressable}><Text style={Styles.pressableText}>Save</Text></Pressable>
+                            <Pressable onPress={handleCancel} style={Styles.pressableOutline}><Text style={Styles.pressableTextOutline}>Cancel</Text></Pressable>
                         </Modal.Footer>
                     </Modal.Container>
 
@@ -65,8 +105,18 @@ const Categories = ({ navigation }) => {
                 <Text style={Styles.savingsText}>My Investments</Text>
 
                 <View style={Styles.cardContainer}>
-                    <Text>Explore</Text>
-                    <Text>Check Balance</Text>
+                    <View>
+                        <Pressable style={Styles.investExplore}>
+                            <Text style={{ fontSize: 20, color: 'white', fontFamily: 'Nunito-Bold', }}>
+                                Explore
+                            </Text>
+                        </Pressable>
+                        <Pressable style={Styles.investExplore}>
+                            <Text style={{ fontSize: 20, color: 'white', fontFamily: 'Nunito-Bold', }}>
+                                Check Balance
+                            </Text>
+                        </Pressable>
+                    </View>
                 </View>
             </View>
 
@@ -75,12 +125,6 @@ const Categories = ({ navigation }) => {
                 <Text style={Styles.savingsText}>Value in Gold</Text>
 
                 <View style={Styles.cardContainer}>
-                    <View style={{ flex: 0.15, marginLeft: 90 }}>
-                        <Pressable onPress={addCardSavings}><PlusIcon name="plus-square-o" size={30} color='white' /></Pressable>
-                    </View>
-                    <View style={{ flex: 1 }}>
-                        <Pressable onPress={addCardSavings}><Text style={Styles.addCard}>Add New Card.</Text></Pressable>
-                    </View>
                 </View>
             </View>
         </ScrollView>

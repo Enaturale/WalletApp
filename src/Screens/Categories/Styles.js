@@ -11,7 +11,7 @@ const Styles = StyleSheet.create({
         
     },
     savingsText:{
-        fontSize: 23,
+        fontSize: 25,
         fontWeight: '600',
         color: 'white',
         marginHorizontal: 10,
@@ -25,8 +25,8 @@ const Styles = StyleSheet.create({
         justifyContent:'center',
         color:'white',  
         fontWeight:'bold',
-        fontSize: 19,  
-        fontFamily: 'Nunito-Light',    
+        fontSize: 20,  
+        fontFamily: 'Nunito-Bold',    
 
     },
     cardContainer:{
@@ -90,6 +90,12 @@ const Styles = StyleSheet.create({
         marginLeft: 22,      
         
 
+    },
+    investExplore:{
+        alignItems:'center',
+        justifyContent:'center',
+        fontFamily:'PlayfairDisplay-Regular',
+        fontWeight: '700',
     }
 
 });
