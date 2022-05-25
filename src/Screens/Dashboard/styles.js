@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         //backgroundColor: '#e3e3e3',
         marginBottom: Platform.select({ios:0, android:1}),
-        marginTop: 10,
-        marginLeft: 30,
+        marginTop: 15,
+        marginLeft: 85,
     },
     image:{
         // ...StyleSheet.absoluteFillObject,
         resizeMode:'contain',
-        height: '30%',
+        height: '90%',
     },
     dotContainer:{
        // backgroundColor:'#D9D9D9',
