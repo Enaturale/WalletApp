@@ -85,11 +85,6 @@ const Dashboard = ({ navigation }) => {
 
         </View>
 
-
-
-
-
-
     )
 }
 
