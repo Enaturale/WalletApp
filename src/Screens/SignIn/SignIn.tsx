@@ -26,7 +26,7 @@ const SignIn = ({ navigation }) => {
   const [password, setPassword] = useState(' ');
   //if the user is logged in
   useEffect(()=> {
-   const unsubscribe = auth.onAuthStateChanged(user => {
+   const unsubscribe = auth.onAuthStateChanged((user: any) => {
       if (user){
         navigation.navigate('Dashboard');
       }

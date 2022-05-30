@@ -5,7 +5,6 @@ import PlusIcon from 'react-native-vector-icons/FontAwesome';
 import { Modal } from '../../Components/Modal';
 
 
-
 const Categories = ({ navigation }) => {
     // for showing modal when add card is clicked on
     const [showModal, setShowModal] = useState(false);
@@ -69,16 +68,21 @@ const Categories = ({ navigation }) => {
                     <Modal.Container>
                         <Modal.Header title="Add Card" />
                         <Modal.Body>
-                            <TextInput placeholder='Enter Card Name' style={Styles.input} />
-                            <TextInput placeholder='Enter Card Number' style={Styles.input} />
-                            <View style={{ flexDirection: 'row', marginHorizontal: 10, marginVertical: 10, }}>
-                                <View style={[Styles.inputShort, { flex: 2, marginRight: 10, }]}>
-                                    <TextInput placeholder='Enter Expiry Date' />
+                            {/* Including stripe payment method */}
+                            
+                                <TextInput placeholder='Card Name' style={Styles.input} />
+                                <TextInput placeholder='1234 1234 1234 1234' style={Styles.input} />
+                                <View style={{ flexDirection: 'row', marginHorizontal: 10, marginVertical: 10, }}>
+                                    <View style={[Styles.inputShort, { flex: 2, marginRight: 10, }]}>
+                                        <TextInput placeholder='MM/YY' />
+                                    </View>
+                                    <View style={[Styles.inputShort, { flex: 2, }]}>
+                                        <TextInput placeholder='CVV' />
+                                    </View>
                                 </View>
-                                <View style={[Styles.inputShort, { flex: 2, }]}>
-                                    <TextInput placeholder='Enter CVV' />
-                                </View>
-                            </View>
+
+                           
+
                         </Modal.Body>
                         <Modal.Footer>
                             <Pressable onPress={handleSave} style={Styles.pressable}><Text style={Styles.pressableText}>Save</Text></Pressable>
@@ -124,7 +128,21 @@ const Categories = ({ navigation }) => {
             <View style={Styles.savingsContainer}>
                 <Text style={Styles.savingsText}>Value in Gold</Text>
 
-                <View style={Styles.cardContainer}>
+
+                <View style={Styles.cardContainer}>                    
+                <View>
+                    <Pressable>
+                    <Text style={{color:'white', fontSize: 20, fontFamily: 'Nunito-Bold'}}>
+                        Check Balance
+                    </Text>
+                    </Pressable>
+               
+                    <Pressable>
+                    <Text style={{color:'white', fontSize: 20, fontFamily: 'Nunito-Bold'}}>
+                        All Transactions
+                    </Text>
+                    </Pressable>
+                </View>
                 </View>
             </View>
         </ScrollView>
