@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     item:{
         width: '100%',
         height: screenWidth - 290,
-        backgroundColor: '#009688',
+        backgroundColor: '#1B4E89',
         alignItems: 'flex-start',
         justifyContent:'flex-start',
         borderRadius: 20,

@@ -16,7 +16,7 @@ const Dashboard = ({ navigation }) => {
 
         <View style={{ backgroundColor: 'white', height: '100%' }}>
             {/* Title */}
-            <Text style={{ fontSize: 25, color: '#009688',marginHorizontal: 30, marginTop: 20, fontWeight: 'bold' }}>
+            <Text style={{ fontSize: 30, color: '#2F629E', marginHorizontal: 30, marginTop: 20, fontWeight: 'bold' }}>
                 My Wallet
             </Text>
 
@@ -42,19 +42,19 @@ const Dashboard = ({ navigation }) => {
 
                     <ScrollView showsVerticalScrollIndicator={false}>
                         <View style={styles.listing}>
-                            {person.map((person) => {
+                            {person.map((person, key) => {
                                 return (
                                     <View>
-                                        <View style={styles.list}>
+                                        <View style={styles.list} key={key}>
                                             <View>
-                                                <Text style={styles.listText1}>{person.name}</Text>
+                                                <Text  style={styles.listText1}>{person.name}</Text>
                                             </View>
                                             <View>
-                                                <Text style={styles.listText}>{person.amount}</Text>
+                                                <Text  style={styles.listText}>{person.amount}</Text>
                                             </View>
                                         </View>
                                         <View>
-                                            <Text style={{marginLeft: 20, marginBottom: 20, fontSize: 15, color:'#B80000' }}>{person.date}</Text>
+                                            <Text key={person.id} style={{marginLeft: 20, marginBottom: 20, fontSize: 15, color:'#B80000' }}>{person.date}</Text>
                                         </View>
                                     </View>
 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     },
     recentText: {
         fontSize: 23,
-        color: '#009688',
+        color: '#2F629E',
         fontWeight: 'bold',
         marginTop: 20,
         marginLeft: 20,
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     listText1:{
         fontSize: 20,        
         paddingRight: 40,
-        color:'#00796B',
+        color:'#1B4E89',
 
     },
     cardContainer: {

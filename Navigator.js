@@ -29,7 +29,7 @@ function DashbaordStackScreen() {
             <Stack.Screen name="Dashboard" component={Dashboard} options={{
                 title: 'Welcome',
                 headerStyle:{
-                    backgroundColor: '#009688',
+                    backgroundColor: '#13437B',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -73,7 +73,7 @@ function CategoriesStackScreen() {
                 options={{
                     title: 'Categories',
                     headerStyle:{
-                        backgroundColor: '#009688',
+                        backgroundColor: '#13437B',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
@@ -98,11 +98,12 @@ function ProfileStackScreen() {
                 options={{
                     title: 'Profile',
                     headerStyle:{
-                        backgroundColor: '#009688',
+                        backgroundColor: '#13437B',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
                         fontWeight: 'bold',
+                        fontSize: 25,
                     }
                 }}  
                 
@@ -127,9 +128,9 @@ export default function Navigation(props) {
       
             <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: '#00796B',
+                tabBarActiveTintColor: '#13437B',
                 tabBarstyle:{
-                    backgroundColor: '#4DB6AC',
+                    backgroundColor: '#85A7E1',
                 },
                 tabBarLabelStyle:{
                     fontSize: 15,

@@ -9,12 +9,24 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontFamily:"Nunito-Black",
         marginVertical: 8,
+        color: '#1B4E89'
     },
     text:{
         fontSize: 20,
         marginBottom: 20,
         fontFamily:'Nunito-Medium',
+        paddingTop: 10,
+        marginHorizontal: 20,
+        color:'#969696'
+     
     },
+    pressable:{
+        borderColor: '#1B4E89',
+        borderRadius: 10,
+        borderWidth: 2,
+        marginVertical:10,
+
+    }
 
 });
 

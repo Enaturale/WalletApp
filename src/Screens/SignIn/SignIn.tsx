@@ -22,8 +22,8 @@ const SignIn = ({ navigation }) => {
     navigation.navigate('Dashboard');
   }
 
-  const [email, setEmail] = useState(' ');
-  const [password, setPassword] = useState(' ');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   //if the user is logged in
   useEffect(()=> {
    const unsubscribe = auth.onAuthStateChanged((user: any) => {
@@ -38,7 +38,7 @@ const SignIn = ({ navigation }) => {
   const handleSignUp = () => {
     auth
     .createUserWithEmailAndPassword(email.trim(), password)
-    .then((userCredentials) => {
+    .then((userCredentials: { user: any; }) => {
       const user = userCredentials.user;
       alert('User created successfully. You registered with ' + user.email);
       navigation.navigate('Dashboard')
@@ -72,13 +72,13 @@ const SignIn = ({ navigation }) => {
       
         <View style={{justifyContent: 'center', alignItems:'center', marginTop: 50,}}>
           <TextInput
-            placeholder='Email'
+            placeholder=' Email'
             value={email}
             onChangeText={text => setEmail(text)}
             style={styles.input}
           />
           <TextInput
-            placeholder='Password'
+            placeholder=' Password'
             secureTextEntry
             value={password}
             onChangeText={text => setPassword(text)}
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     // alignItems:'center',
     marginTop: 0,
     height: 800,
-    backgroundColor: '#009688',
+    backgroundColor: '#10427D',
     borderRadius: 23,
   },
   input: {
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     width: '95%',
     marginBottom: 25,
     borderColor: '#90A4AE',
-    color: '#009688',
+    color: '#4577B2',
     fontWeight: 'bold',
     borderRadius: 10,
     backgroundColor: 'white'
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito-Regular'
   },
   pressableText:{
-    color: '#009688',
+    color: '#10427D',
     fontSize: 30,
     alignContent:'center',
     justifyContent:'center',
